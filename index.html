@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <link rel="stylesheet" href="website.css"/>
+     <!--icons start-->
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png">
+    
+    <link rel="manifest" href="TemplateData/manifest.json">
+   
+    <meta name="theme-color" content="#000000">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <!--icons end-->
+
+    <title>The CNFT Graveyard Lottery</title>
+    <meta name="description" content="">       
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RFSP9L3K2M"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-ZMQYC3G6Z9');
+    </script>
+</head>
+<body>
+
+    <div >
+        <div class="title">
+            <h1>cnft graveyard</h1>
+        </div>        
+        
+            <div class="content">        
+                <section>
+                    <div class="description">
+                        <div class="sectiontitle">
+                            WHAT
+                        </div>
+                        <p>
+                            Have you collected tons of CNFTs?<br>
+                            <br>
+                            Do you have any that you wish you'd never bought just hanging around messing up your wallet?<br>
+                            <br>
+                            Bury them in the graveyard and let them Rest In Peace!
+                        </p>
+                    </div>
+                    <div class="wallet">
+                        <div class="sectiontitle">
+                            HOW
+                        </div>
+                        <p>
+                            Send your CNFT to this address:<br>
+                            <br>
+                            addr1q9k9zgyf9pmnfcn5t90y365q62xqtaa4defm53dnxzvl27dk6m3x8sq632asj0g7chdwcaqw6asr4l6pqesl3v8xjneq3qfezd<br>
+                            <br>                            
+                        </p>
+                    </div>             
+                    <div class="transactions">
+                        <div class="sectiontitle">
+                            WHERE
+                        </div>
+                        <p>
+                            All transactions can be tracked on the blockchain by visiting the below link:<br>
+                            <br>
+                            <a href="https://cardanoscan.io/address/016c512089287734e274595e48ea80d28c05f7b56e53ba45b33099f579b6d6e263c01a8abb093d1ec5daec740ed7603aff410661f8b0e694f2" target="_blank">Cardanoscan Transactions</a>
+                            <br><br>
+                            The NFTs populating the graveyard are at:<br />
+                            <br />
+                            <a href="https://pool.pm/addr1q9k9zgyf9pmnfcn5t90y365q62xqtaa4defm53dnxzvl27dk6m3x8sq632asj0g7chdwcaqw6asr4l6pqesl3v8xjneq3qfezd" target="_blank">Pool.pm NFTs</a>
+                        </p>
+                    </div>
+                </section>                
+            </div>
+    </div>           
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+                .register('sw.js')
+                .then(function () { console.log("Service Worker Registered"); });
+        }
+    </script>    
+    
+    <script>
+        const Http = new XMLHttpRequest();        
+        const url = 'https://cardano-mainnet.blockfrost.io/api/v0/accounts/stake1uxmddcnrcqdg4wcf850vtkhvws8dwcp6laqsvc0ckrnffusvk5lvg';
+        Http.open("GET", url);
+        Http.setRequestHeader('project_id', 'mainnetNjd8GnHzFnwVpznqPiO2hAJjfFEgezC0');
+        Http.send();
+
+        Http.onreadystatechange = (e) => {
+            if (e.currentTarget.readyState == 4 && e.currentTarget.status == 200 && e.currentTarget.responseText != '') {
+                var stake = ((parseFloat(JSON.parse(Http.responseText).controlled_amount) / 1000000) - 10) * 0.9;
+                document.getElementById('stakeamount').textContent = stake.toFixed(2).replaceAll('0','O') + " ";
+            }
+        }
+    </script>
+</body>
+</html>
